@@ -1,18 +1,17 @@
 import { useContext, useState } from "react"
-import { DisplayContext } from "../../context/DisplayContext"
+import { DisplayContext, DisplayContextType } from "../../context/DisplayContext"
 
 export const EqualsButton = () => {
-    const {display, setDisplay} = useContext(DisplayContext)
+    const {setDisplay} = useContext(DisplayContext) as DisplayContextType
 
 
     const handleClick = () => {
 
-        setDisplay(state => {
+        setDisplay((state) => {
             let result
             try {
                 result = eval(state.replace("x", "*"))
             } catch (error) {
-                console.log(error)
                 result = "nan"
             } finally {
                 return result

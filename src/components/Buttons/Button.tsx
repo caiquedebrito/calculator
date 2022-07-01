@@ -1,10 +1,10 @@
 import { useContext } from 'react'
-import { DisplayContext } from '../../context/DisplayContext'
+import { DisplayContext, DisplayContextType } from '../../context/DisplayContext'
 import ButtonProps from './interface'
 import './style.css'
 
 export const Button = ({id, children} : ButtonProps) => {
-    const {display, setDisplay} = useContext(DisplayContext)
+    const {setDisplay} = useContext(DisplayContext) as DisplayContextType
 
 
     const handleClick = () => {
@@ -31,9 +31,10 @@ export const Button = ({id, children} : ButtonProps) => {
             }
 
             if (endsWithOperator.test(state) && operators.test(children)) {
-                state = state.split("")
-                state.splice(state.length-1, 1, children)
-                return state.join("")
+                
+                let aux: Array<string> = state.split("")
+                aux.splice(state.length-1, 1, children)
+                return aux.join("")
             }
 
             return state + children

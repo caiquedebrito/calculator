@@ -1,13 +1,18 @@
-import { Children, createContext, useState } from "react";
+import { createContext, Dispatch, SetStateAction, useState } from "react";
 
-export const DisplayContext = createContext("")
+export type DisplayContextType = {
+    display: string,
+    setDisplay: Dispatch<SetStateAction<string>>
+}
+
+export const DisplayContext = createContext<DisplayContextType | null>(null)
 
 interface DisplayProps {
     children: any
 }
 
 export const DisplayProvider = ({ children }: DisplayProps) => {
-    const [display, setDisplay] = useState("")
+    const [display, setDisplay] = useState<string>("")
 
     return (
         <DisplayContext.Provider value={{display, setDisplay}}>
