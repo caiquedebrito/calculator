@@ -1,9 +1,9 @@
 import { useContext } from "react";
-import { DisplayContext } from "../../context/DisplayContext";
+import { DisplayContext, DisplayContextType } from "../../context/DisplayContext";
 import ButtonProps from "./interface";
 
 export const ClearButton = ({id, children}: ButtonProps) => {
-    const {setDisplay} = useContext(DisplayContext)
+    const {setDisplay} = useContext(DisplayContext) as DisplayContextType
 
     const clearDisplay = () => setDisplay("0")
 
