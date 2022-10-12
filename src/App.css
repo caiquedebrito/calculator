@@ -1,7 +1,7 @@
 
 
-.container-button {
-  width: 282px;
+.buttons-container {
+  min-width: 380px;
   border: 1px solid;
   display: flex;
   flex-wrap: wrap;

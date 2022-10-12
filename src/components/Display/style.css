@@ -1,12 +1,15 @@
 #display {
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
+    text-align: right;
     height: 55px;
-    width: 282px;
+    width: 100%;
     padding: .5rem;
-    border: 1px solid;
     font-weight: bold;
     font-size: 22px;
     background-color: white;
+    color: rgb(255, 106, 0);
+    border: 1px solid black;
+}
+
+#display:focus {
+    outline: none;
 }
